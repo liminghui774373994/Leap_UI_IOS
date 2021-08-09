@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>接口测试</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #F0F8FF;
+    width: 40%;
+    padding: 20px;
+}
+
+
+        * {
+	margin:0;
+	padding:0;
+}
+body {
+	font-size:14px;
+	font-family:"微软雅黑";
+	color:#333;
+}
+
+.wrap .wrap_Iten {
+	position:relative;
+	margin:20px auto;
+}
+
+.form_input {
+	border:1px solid #dcdcdc;
+	border-radius:5px;
+	font-size:12px;
+	padding:8px 10px;
+	transition:border-color .15s ease-in-out 0s;
+	width:378px;
+	outline:none;
+}
+
+.smart-green .button {
+	background-color: # 9DC45F;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-border-radius: 5px;
+	border: none;
+	padding: 10px 25px 10px 25px;
+	color: # FFF;
+	text-shadow: 1px 1px 1px # 949494;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="navbar" style="background-color:#3366CC;">
+  <a href="http://127.0.0.1:8000/article/index/">内容中心</a>
+  <a href="http://127.0.0.1:8000/app/index/">学而思APP</a>
+  <a href="http://127.0.0.1:8000/activity/index/">拉新活动</a>
+    <a href="http://127.0.0.1:8000/monitor/index/">数据监控</a>
+    <a href="http://127.0.0.1:8000/autoTest/index/">接口测试</a>
+  <a href="#" class="right">登陆</a>
+</div>
+
+<div class="row" >
+    <div class="side">
+    <h3>接口测试</h3><br>
+        <form action="{% url 'autoTest:post_request' %}" method="post">
+              {% csrf_token %}
+
+             <select name="请求方式">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value="PUT">PUT</option>
+            </select>
+            <br><br><br>
+            <label>URL<br>
+            <input  type="text" tabindex="1" value="" name="URL" class="form_input">
+            </label>
+            <br>
+            <label>Headers<br>
+            <input  type="text" tabindex="1" value="" name="Headers" class="form_input">
+            </label>
+            <br>
+            <label>指定服务器IP<br>
+            <input  type="text" tabindex="1" value="" name="指定服务器IP" class="form_input">
+            </label>
+            <br>
+            <label>Body<br>
+            <input  type="text" tabindex="1" value="" name="Body" class="form_input">
+            </label>
+            <br>
+            <br>
+            <input style="background-color: #9DC45F;border-radius:5px;-webkit-border-radius: 5px;-moz-border-border-radius: 5px;
+            border: none;padding:5px 15px 5px 15px;color: #FFF;text-shadow:1px 1px 1px #949494;" type="submit" value="提交">
+
+        </form>
+
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
